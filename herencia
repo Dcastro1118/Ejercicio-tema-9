@@ -1,0 +1,79 @@
+public class Main {
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente();
+        cliente.setEdadPersona(30);
+        cliente.setNombrePersona("Juan");
+        cliente.setTelefonoPersona(123456789);
+        cliente.setCreditoCliente(true);
+
+        System.out.println("Edad: " + cliente.getEdadPersona());
+        System.out.println("Nombre: " + cliente.getNombrePersona());
+        System.out.println("Teléfono: " + cliente.getTelefonoPersona());
+        System.out.println("Crédito: " + cliente.isCreditoCliente());
+
+        Trabajador trabajador = new Trabajador();
+        trabajador.setSalarioTrabajador(300000);
+        trabajador.setEdadPersona(25);
+        trabajador.setTelefonoPersona(123456789);
+        trabajador.setNombrePersona("Carlos");
+
+        System.out.println("Edad: " + trabajador.getEdadPersona());
+        System.out.println("Nombre: " + trabajador.getNombrePersona());
+        System.out.println("Teléfono: " + trabajador.getTelefonoPersona());
+        System.out.println("Crédito: " + trabajador.getSalarioTrabajador());
+    }
+
+    static class Persona {
+        private String nombrePersona;
+        private int edadPersona;
+        private int telefonoPersona;
+
+        public String getNombrePersona() {
+            return nombrePersona;
+        }
+
+        public void setNombrePersona(String nombrePersona) {
+            this.nombrePersona = nombrePersona;
+        }
+
+        public int getTelefonoPersona() {
+            return telefonoPersona;
+        }
+
+        public void setTelefonoPersona(int telefonoPersona) {
+            this.telefonoPersona = telefonoPersona;
+        }
+
+        public int getEdadPersona() {
+            return edadPersona;
+        }
+
+        public void setEdadPersona(int edadPersona) {
+            this.edadPersona = edadPersona;
+        }
+    }
+
+    static class Cliente extends Persona {
+        private boolean creditoCliente;
+
+        public boolean isCreditoCliente() {
+            return creditoCliente;
+        }
+
+        public void setCreditoCliente(boolean creditoCliente) {
+            this.creditoCliente = creditoCliente;
+        }
+    }
+
+    static class Trabajador extends Persona {
+        private int salarioTrabajador;
+
+        public int getSalarioTrabajador() {
+            return salarioTrabajador;
+        }
+
+        public void setSalarioTrabajador(int salarioTrabajador) {
+            this.salarioTrabajador = salarioTrabajador;
+        }
+    }
+}
